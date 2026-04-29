@@ -202,135 +202,135 @@ var typeLabels = { image:'Bilderstellung', text:'Texterstellung', code:'Coden', 
 
 // ── Style-Mappings für Bildprompts ──
 var imageStyleMap = {
-  "Fotorealistisch":        "photorealistic, ultra-detailed, 8K resolution, professional photography",
-  "Illustriert / Cartoon":  "digital illustration, cartoon style, vibrant colors, clean lines",
-  "Gemälde / Aquarell":     "watercolor painting, artistic brushstrokes, soft edges, painterly style",
-  "Sci-Fi / Futuristisch":  "futuristic, sci-fi concept art, neon accents, high-tech environment",
-  "Minimalistisch":         "minimalist, clean composition, simple shapes, lots of negative space",
-  "Egal / KI entscheiden":  ""
+  "Fotorealistisch":        "photorealistic, ultra-detailed, 8K UHD resolution, shot on Canon EOS R5, professional photography, RAW format, sharp focus, realistic skin texture, true-to-life colors, depth of field",
+  "Illustriert / Cartoon":  "digital illustration, cartoon style, vibrant saturated colors, bold clean outlines, cel-shaded, character design, comic book aesthetic, smooth gradients, high contrast",
+  "Gemälde / Aquarell":     "traditional watercolor painting, delicate brushstrokes, soft wet-on-wet bleeding edges, transparent washes, visible paper texture, painterly style, impressionistic details, muted harmonious palette",
+  "Sci-Fi / Futuristisch":  "futuristic sci-fi concept art, sleek metallic surfaces, holographic UI elements, neon cyan and purple accents, high-tech megacity environment, bioluminescent details, cyberpunk aesthetic, rendered in Unreal Engine 5",
+  "Minimalistisch":         "minimalist composition, clean geometric shapes, maximum negative space, limited color palette of 2–3 colors, flat design, swiss poster style, no unnecessary detail, elegant simplicity",
+  "Egal / KI entscheiden":  "best quality, highly detailed"
 };
 var imageMoodMap = {
-  "Episch / Dramatisch":    "epic, dramatic lighting, cinematic atmosphere, powerful composition",
-  "Warm / Gemütlich":       "warm tones, cozy atmosphere, soft lighting, inviting",
-  "Dunkel / Mysteriös":     "dark, mysterious, moody, deep shadows, enigmatic",
-  "Verspielt / Fröhlich":   "playful, cheerful, bright colors, fun and energetic",
-  "Professionell / Sauber": "clean, professional, crisp, well-lit, polished"
+  "Episch / Dramatisch":    "epic cinematic atmosphere, dramatic chiaroscuro lighting, powerful dynamic composition, rule of thirds, wide-angle perspective, heroic scale, intense emotional tension, blockbuster movie still",
+  "Warm / Gemütlich":       "warm golden tones, cozy intimate atmosphere, soft diffused lighting, hygge aesthetic, inviting and comfortable, bokeh background, heartwarming scene, safe and peaceful feeling",
+  "Dunkel / Mysteriös":     "dark brooding atmosphere, deep dramatic shadows, low-key lighting, enigmatic and mysterious mood, fog or mist, hidden details in darkness, noir aesthetic, unsettling yet beautiful",
+  "Verspielt / Fröhlich":   "playful cheerful atmosphere, bright saturated colors, dynamic energetic composition, fun and lighthearted, whimsical details, expressive characters, full of life and movement",
+  "Professionell / Sauber": "clean professional look, crisp sharp edges, well-balanced composition, neutral color palette, corporate aesthetic, polished and refined, suitable for business use"
 };
 var imageFormatMap = {
-  "Quadratisch (Social Media)":    "square format 1:1, social media ready",
-  "Querformat (Wallpaper / Banner)":"landscape format 16:9, wide composition",
-  "Hochformat (Poster)":            "portrait format 2:3, poster layout",
-  "Kein Unterschied":               ""
+  "Quadratisch (Social Media)":     "square format 1:1 aspect ratio, optimized for Instagram and social media, centered composition, strong focal point",
+  "Querformat (Wallpaper / Banner)": "wide landscape format 16:9 aspect ratio, panoramic composition, strong horizontal leading lines, desktop wallpaper ready",
+  "Hochformat (Poster)":             "tall portrait format 2:3 aspect ratio, poster layout, strong vertical composition, magazine cover style",
+  "Kein Unterschied":                ""
 };
 var imageDetailMap = {
-  "Sehr detailliert": "highly detailed, intricate details, complex textures",
-  "Mittel":           "balanced detail level, clear subject",
-  "Simpel / Clean":   "simple, uncluttered, clean style"
+  "Sehr detailliert": "extremely highly detailed, intricate fine details, complex layered textures, macro-level precision, every element carefully rendered, visually rich",
+  "Mittel":           "balanced level of detail, clear and readable subject, well-defined edges, pleasing texture without overwhelming complexity",
+  "Simpel / Clean":   "deliberately simple and uncluttered, clean minimal style, easy to read at a glance, strong silhouette, no visual noise"
 };
 var imageLightMap = {
-  "Natürliches Tageslicht":      "natural daylight, soft shadows",
-  "Golden Hour / Sonnenuntergang":"golden hour lighting, warm sunset glow",
-  "Studio-Licht":                "studio lighting, even illumination, professional setup",
-  "Dramatisches Gegenlicht":     "dramatic backlight, strong contrast, silhouette effect",
-  "Nacht / Kunstlicht":          "night scene, artificial lighting, neon or candlelight",
-  "Kein Unterschied":            ""
+  "Natürliches Tageslicht":       "soft natural daylight, overcast sky diffusion, gentle shadows, true-to-life color temperature 5500K, outdoor ambient light",
+  "Golden Hour / Sonnenuntergang":"magical golden hour lighting, warm amber and orange glow, long soft shadows, sun rays breaking through, cinematic sunset atmosphere",
+  "Studio-Licht":                 "professional three-point studio lighting, softbox key light, subtle fill light, clean background, product photography standard",
+  "Dramatisches Gegenlicht":      "powerful dramatic backlight, strong rim lighting, deep foreground shadows, silhouette effect, lens flare, high contrast between light and dark",
+  "Nacht / Kunstlicht":           "night scene, mixed artificial lighting, neon signs reflecting on wet pavement, candlelight or firelight warmth, deep blue shadows, atmospheric haze",
+  "Kein Unterschied":             ""
 };
 
-// ── Text-Rollen-Mapping ──
+// ── Text-Mappings ──
 var textToneMap = {
-  "Professionell / Sachlich":      "Schreibe in einem sachlichen, professionellen Ton.",
-  "Locker / Freundlich":           "Schreibe locker und freundlich, als würdest du mit einem Freund sprechen.",
-  "Überzeugend / Marketing":       "Schreibe überzeugend und werbewirksam, mit klarem Call-to-Action.",
-  "Kreativ / Storytelling":        "Schreibe kreativ und erzählerisch, mit lebendigen Bildern und Metaphern.",
-  "Wissenschaftlich / Informativ": "Schreibe sachlich-informativ mit klarer Struktur und belegbaren Aussagen."
+  "Professionell / Sachlich":      "Schreibe in einem klaren, sachlichen und professionellen Ton. Vermeide Umgangssprache, Füllwörter und übertriebene Superlative. Die Sprache soll präzise, strukturiert und vertrauenswürdig wirken.",
+  "Locker / Freundlich":           "Schreibe in einem lockeren, herzlichen und freundlichen Ton — als würdest du einem guten Bekannten etwas erklären. Kurze Sätze, direkte Ansprache mit 'du', gerne auch ein Hauch Humor.",
+  "Überzeugend / Marketing":       "Schreibe emotional überzeugend und werbewirksam. Betone den konkreten Nutzen für den Leser, wecke Begeisterung, baue Vertrauen auf und schließe mit einem starken, klaren Call-to-Action ab.",
+  "Kreativ / Storytelling":        "Schreibe kreativ und erzählerisch. Nutze lebendige Bilder, Metaphern und eine fesselnde Dramaturgie. Führe den Leser durch eine Geschichte mit klarem Anfang, Spannungsbogen und befriedigendem Ende.",
+  "Wissenschaftlich / Informativ": "Schreibe sachlich-informativ in einem wissenschaftlichen Stil. Strukturiere den Text klar mit Einleitung, Hauptteil und Fazit. Verwende Fachbegriffe korrekt, belege Aussagen und bleibe objektiv."
 };
 var textLengthMap = {
-  "Sehr kurz (1–2 Sätze)": "Fasse dich in maximal 1–2 Sätzen.",
-  "Kurz (1 Absatz)":        "Schreibe genau einen Absatz.",
-  "Mittel (3–5 Absätze)":   "Schreibe 3–5 gut strukturierte Absätze.",
-  "Lang (Vollständiger Artikel)": "Schreibe einen vollständigen, ausführlichen Artikel mit Einleitung, Hauptteil und Fazit."
+  "Sehr kurz (1–2 Sätze)": "Fasse alles in maximal 1–2 prägnanten Sätzen zusammen. Jedes Wort muss sitzen — keine Füllwörter.",
+  "Kurz (1 Absatz)":        "Schreibe genau einen zusammenhängenden Absatz von 4–6 Sätzen. Komm schnell auf den Punkt.",
+  "Mittel (3–5 Absätze)":   "Schreibe 3–5 gut strukturierte Absätze mit klarer roter Linie. Jeder Absatz behandelt einen Gedanken.",
+  "Lang (Vollständiger Artikel)": "Schreibe einen vollständigen, ausführlichen Artikel mit Überschrift, Einleitung (Hook), mehreren Hauptabschnitten mit Zwischenüberschriften und einem abschließenden Fazit oder Call-to-Action."
 };
 var textAudienceMap = {
-  "Allgemeinpublikum":     "Die Zielgruppe ist das allgemeine Publikum ohne Vorkenntnisse.",
-  "Fachleute / Experten":  "Die Zielgruppe sind Experten — technische Fachbegriffe sind willkommen.",
-  "Kunden / Käufer":       "Die Zielgruppe sind potenzielle Kunden, die zum Kauf motiviert werden sollen.",
-  "Kinder / Jugendliche":  "Die Zielgruppe sind Kinder/Jugendliche — einfache Sprache, anschauliche Beispiele.",
+  "Allgemeinpublikum":     "Die Zielgruppe ist das allgemeine Publikum ohne spezifische Vorkenntnisse. Erkläre Fachbegriffe kurz, verwende Alltagssprache und anschauliche Beispiele.",
+  "Fachleute / Experten":  "Die Zielgruppe sind Fachleute mit tiefem Vorwissen. Technische Begriffe müssen nicht erklärt werden. Gehe direkt in die Tiefe und vermeide oberflächliche Vereinfachungen.",
+  "Kunden / Käufer":       "Die Zielgruppe sind potenzielle Kunden, die noch unentschlossen sind. Spreche ihre Bedürfnisse und Schmerzpunkte direkt an, baue Vertrauen auf und motiviere zur Handlung.",
+  "Kinder / Jugendliche":  "Die Zielgruppe sind Kinder oder Jugendliche. Verwende eine einfache, bildhafte Sprache, kurze Sätze, konkrete Beispiele aus dem Alltag und einen spielerischen, ermutigenden Ton.",
   "Egal":                  ""
 };
 var textOutputMap = {
-  "Fertig verwendbarer Text":  "Liefere einen direkt verwendbaren, vollständigen Text.",
-  "Entwurf zum Überarbeiten":  "Erstelle einen Entwurf, der als Basis zum Überarbeiten dient.",
-  "Mehrere Varianten":         "Erstelle 3 verschiedene Varianten des Textes.",
-  "Stichpunkte / Outline":     "Erstelle zunächst eine strukturierte Gliederung mit Stichpunkten."
+  "Fertig verwendbarer Text":  "Liefere einen direkt verwendbaren, vollständig ausformulierten Text — keine Platzhalter, keine Lücken, sofort einsetzbar.",
+  "Entwurf zum Überarbeiten":  "Erstelle einen soliden ersten Entwurf als Arbeitsgrundlage. Kennzeichne Stellen, die noch angepasst werden sollten, mit [PLATZHALTER].",
+  "Mehrere Varianten":         "Erstelle 3 klar unterschiedliche Varianten des Textes — unterschiedlicher Ton, Stil oder Schwerpunkt — damit ich die passendste auswählen kann.",
+  "Stichpunkte / Outline":     "Erstelle zunächst eine detaillierte Gliederung mit Hauptpunkten und Unterpunkten. Zeige die Struktur bevor du den eigentlichen Text schreibst."
 };
 var textLangMap = {
-  "Deutsch":                      "Antworte ausschließlich auf Deutsch.",
-  "Englisch":                     "Reply exclusively in English.",
-  "Gleiche Sprache wie Eingabe":  ""
+  "Deutsch":                     "Schreibe ausschließlich auf Deutsch. Achte auf korrekte Grammatik, Rechtschreibung und einen natürlichen deutschen Sprachfluss.",
+  "Englisch":                    "Write exclusively in English. Use natural, fluent phrasing appropriate for native speakers.",
+  "Gleiche Sprache wie Eingabe": ""
 };
 
 // ── Code-Mappings ──
 var codeLangMap = {
-  "JavaScript / TypeScript": "Verwende JavaScript (ES6+) bzw. TypeScript.",
-  "Python":                  "Verwende Python 3.",
-  "HTML / CSS":              "Verwende sauberes HTML5 und modernes CSS.",
-  "React / Vue":             "Verwende React mit funktionalen Komponenten und Hooks.",
-  "PHP":                     "Verwende PHP 8.",
-  "SQL":                     "Schreibe SQL-Abfragen (kompatibel mit MySQL/PostgreSQL).",
+  "JavaScript / TypeScript": "Verwende modernes JavaScript (ES2022+) bzw. TypeScript mit strikter Typisierung. Nutze aktuelle Sprachfeatures wie async/await, optionales Chaining und Destructuring.",
+  "Python":                  "Verwende Python 3.10+ mit Typ-Annotationen wo sinnvoll. Folge PEP 8 Konventionen und nutze moderne Python-Features.",
+  "HTML / CSS":              "Verwende semantisches HTML5 und modernes CSS3 (Flexbox, Grid, Custom Properties). Code soll valide, barrierefrei und responsive sein.",
+  "React / Vue":             "Verwende React 18 mit funktionalen Komponenten, Hooks und modernen Patterns (keine Klassen-Komponenten). Trenne Logik und Darstellung sauber.",
+  "PHP":                     "Verwende PHP 8.2+ mit strikten Typen (declare(strict_types=1)). Nutze moderne OOP-Patterns und PSR-konforme Strukturen.",
+  "SQL":                     "Schreibe optimierte SQL-Abfragen kompatibel mit MySQL 8 / PostgreSQL 15. Achte auf Index-Nutzung, vermeide N+1-Probleme und nutze CTEs wo sinnvoll.",
   "Andere / Egal":           ""
 };
 var codeGoalMap = {
-  "Neues Feature schreiben":   "Schreibe neuen, sauberen Code für folgendes Feature:",
-  "Code debuggen":             "Analysiere den folgenden Code auf Fehler und behebe sie:",
-  "Code refactorn":            "Refactore den folgenden Code für bessere Lesbarkeit und Wartbarkeit:",
-  "Code erklären":             "Erkläre den folgenden Code Schritt für Schritt verständlich:",
-  "Komplettes Tool erstellen": "Erstelle ein vollständiges, lauffähiges Tool für folgende Aufgabe:"
+  "Neues Feature schreiben":   "Implementiere das folgende neue Feature sauber und wartbar. Halte dich an Best Practices und SOLID-Prinzipien:",
+  "Code debuggen":             "Analysiere den folgenden Code systematisch auf Bugs, Logikfehler und Edge Cases. Erkläre jeden gefundenen Fehler und liefere den korrigierten Code:",
+  "Code refactorn":            "Refactore den folgenden Code für bessere Lesbarkeit, Wartbarkeit und Performance. Erkläre kurz welche Verbesserungen du vorgenommen hast und warum:",
+  "Code erklären":             "Erkläre den folgenden Code vollständig und verständlich. Gehe auf den Zweck, die Logik und jeden wichtigen Schritt ein. Erkläre auch mögliche Fallstricke:",
+  "Komplettes Tool erstellen": "Erstelle ein vollständiges, sofort lauffähiges Tool für die folgende Aufgabe. Inklusive aller nötigen Funktionen, Fehlerbehandlung und Kommentare:"
 };
 var codeLevelMap = {
-  "Anfänger (mit Erklärungen)":    "Erkläre jeden Schritt ausführlich mit Kommentaren, ideal für Anfänger.",
-  "Mittel (kommentierter Code)":   "Kommentiere wichtige Stellen, gehe von Grundkenntnissen aus.",
-  "Fortgeschritten (kompakt, effizient)": "Schreibe kompakten, effizienten Code ohne überflüssige Kommentare."
+  "Anfänger (mit Erklärungen)":         "Erkläre jeden wichtigen Schritt mit ausführlichen Inline-Kommentaren. Definiere Fachbegriffe kurz. Der Code soll auch für Lernende gut nachvollziehbar sein.",
+  "Mittel (kommentierter Code)":         "Kommentiere alle nicht-offensichtlichen Stellen und wichtige Designentscheidungen. Gehe von soliden Grundkenntnissen aus.",
+  "Fortgeschritten (kompakt, effizient)":"Schreibe idiomatischen, effizienten Code ohne überflüssige Kommentare. Nutze fortgeschrittene Sprachfeatures und Patterns wo es Sinn ergibt."
 };
 var codeContextMap = {
-  "Browser / Frontend": "Der Code läuft im Browser (Frontend).",
-  "Node.js / Backend":  "Der Code läuft in Node.js (Backend/Server).",
-  "Lokal / Skript":     "Der Code wird lokal als Skript ausgeführt.",
+  "Browser / Frontend": "Der Code läuft im Browser (Frontend). Achte auf Browser-Kompatibilität, DOM-Performance und keine sensitiven Daten im Client.",
+  "Node.js / Backend":  "Der Code läuft in Node.js (Backend/Server). Achte auf asynchrone Patterns, Speicherverwaltung und sichere Dateioperationen.",
+  "Lokal / Skript":     "Der Code wird lokal als Standalone-Skript ausgeführt. Optimiere für einfache Ausführbarkeit und klare Konsolenausgaben.",
   "Kein Unterschied":   ""
 };
 var codeExtraMap = {
-  "Keine":                    "",
-  "Fehlerbehandlung einbauen":"Baue eine robuste Fehlerbehandlung (try/catch, Validierung) ein.",
-  "Unit Tests hinzufügen":    "Schreibe zusätzlich passende Unit Tests.",
-  "Performance optimieren":   "Optimiere den Code für maximale Performance.",
-  "Sicherheit beachten":      "Achte besonders auf Sicherheit (Input-Validierung, XSS, SQL-Injection etc.)."
+  "Keine":                     "",
+  "Fehlerbehandlung einbauen": "Baue eine robuste, umfassende Fehlerbehandlung ein: try/catch-Blöcke, Eingabevalidierung, aussagekräftige Fehlermeldungen und sinnvolle Fallback-Werte.",
+  "Unit Tests hinzufügen":     "Schreibe zusätzlich vollständige Unit Tests mit sinnvollen Testfällen — inklusive Happy Path, Edge Cases und Fehlerfällen.",
+  "Performance optimieren":    "Optimiere den Code aktiv für maximale Performance: vermeide unnötige Re-Renders/Berechnungen, nutze Caching, minimiere Datenbankabfragen und beachte Big-O-Komplexität.",
+  "Sicherheit beachten":       "Lege besonderen Fokus auf Sicherheit: validiere alle Eingaben, sanitize Outputs, verhindere XSS/SQL-Injection/CSRF, nutze sichere Standardwerte und minimiere die Angriffsfläche."
 };
 
 // ── Sonstiges-Mappings ──
 var otherGoalMap = {
-  "Analyse / Bewertung":     "Analysiere und bewerte das folgende Thema kritisch:",
-  "Planung / Struktur":      "Erstelle einen strukturierten Plan für:",
-  "Recherche / Fakten":      "Recherchiere und fasse die wichtigsten Fakten zusammen über:",
-  "Kreatives Brainstorming": "Generiere kreative Ideen und ungewöhnliche Ansätze für:",
-  "Entscheidungshilfe":      "Hilf mir bei der Entscheidungsfindung zu folgendem Thema:"
+  "Analyse / Bewertung":     "Führe eine tiefgründige, kritische Analyse des folgenden Themas durch. Beleuchte Stärken, Schwächen, Chancen und Risiken. Belege deine Argumentation mit konkreten Beispielen:",
+  "Planung / Struktur":      "Erstelle einen detaillierten, praxistauglichen Plan für das folgende Vorhaben. Gliedere in klare Phasen mit konkreten Schritten, Meilensteinen und möglichen Stolpersteinen:",
+  "Recherche / Fakten":      "Recherchiere das folgende Thema gründlich und fasse die wichtigsten Fakten, Hintergründe und aktuellen Entwicklungen präzise zusammen. Trenne klar zwischen gesicherten Fakten und Interpretationen:",
+  "Kreatives Brainstorming": "Generiere mindestens 10 kreative, originelle und unkonventionelle Ideen für das folgende Thema. Denke außerhalb der Box, kombiniere unerwartete Konzepte und bewerte kurz jede Idee:",
+  "Entscheidungshilfe":      "Hilf mir bei einer fundierten Entscheidung zum folgenden Thema. Analysiere die wichtigsten Optionen mit ihren jeweiligen Vor- und Nachteilen, Risiken und Konsequenzen. Gib am Ende eine begründete Empfehlung:"
 };
 var otherFormatMap = {
-  "Fließtext":            "Antworte in gut lesbarem Fließtext.",
-  "Stichpunkte / Liste":  "Antworte in übersichtlichen Stichpunkten.",
-  "Tabelle":              "Stelle die Informationen in einer übersichtlichen Tabelle dar.",
-  "Schritt-für-Schritt":  "Erkläre alles in einer klaren Schritt-für-Schritt-Anleitung.",
-  "Egal":                 ""
+  "Fließtext":           "Formuliere die Antwort als gut lesbaren, zusammenhängenden Fließtext mit klarer Argumentationslinie.",
+  "Stichpunkte / Liste": "Strukturiere die Antwort in klaren, prägnanten Stichpunkten. Jeder Punkt soll eine vollständige, nützliche Information enthalten.",
+  "Tabelle":             "Stelle die Informationen in einer übersichtlichen, gut strukturierten Tabelle dar mit sinnvollen Spaltenüberschriften und vergleichbaren Zeilen.",
+  "Schritt-für-Schritt": "Erkläre alles in einer nummerierten Schritt-für-Schritt-Anleitung. Jeder Schritt soll konkret, umsetzbar und in sich verständlich sein.",
+  "Egal":                ""
 };
 var otherDepthMap = {
-  "Schneller Überblick":          "Gib mir einen kurzen, prägnanten Überblick.",
-  "Detailliert":                  "Geh ins Detail und erkläre die wichtigsten Aspekte ausführlich.",
-  "So vollständig wie möglich":   "Sei so umfassend und vollständig wie möglich."
+  "Schneller Überblick":        "Fasse die wichtigsten Kernpunkte prägnant zusammen — maximal 150 Wörter, nur das Wesentlichste.",
+  "Detailliert":                "Geh in die Tiefe: erkläre Hintergründe, Zusammenhänge und Nuancen ausführlich. Qualität über Kürze.",
+  "So vollständig wie möglich": "Behandle das Thema so umfassend und vollständig wie möglich. Lasse keine wichtigen Aspekte aus und gehe auf alle relevanten Dimensionen ein."
 };
 var otherRoleMap = {
   "Nein":                   "",
-  "Experte auf dem Gebiet": "Agiere als erfahrener Experte auf diesem Gebiet.",
-  "Kritischer Berater":     "Agiere als kritischer Berater und zeige auch Schwächen und Risiken auf.",
-  "Kreativer Partner":      "Agiere als kreativer Partner und denke außerhalb der Box.",
-  "Lehrer / Erklärer":      "Agiere als geduldiger Lehrer und erkläre alles verständlich."
+  "Experte auf dem Gebiet": "Übernimm die Rolle eines anerkannten Experten mit 20+ Jahren Erfahrung auf diesem Gebiet. Antworte mit dem Tiefgang und der Präzision, die dieser Expertise entspricht.",
+  "Kritischer Berater":     "Übernimm die Rolle eines unabhängigen, kritischen Beraters. Zeige nicht nur Chancen, sondern auch Schwächen, Risiken und blinde Flecken klar auf — auch wenn es unbequem ist.",
+  "Kreativer Partner":      "Übernimm die Rolle eines kreativen Denkpartners. Hinterfrage Annahmen, schlage unerwartete Perspektiven vor und inspiriere zu neuen Denkwegen.",
+  "Lehrer / Erklärer":      "Übernimm die Rolle eines erfahrenen, geduldigen Lehrers. Erkläre alles von Grund auf, nutze Analogien und Alltagsbeispiele und stelle sicher, dass jeder Schritt verstanden werden kann."
 };
 
 function selectType(el) {
@@ -392,8 +392,9 @@ function buildPrompt() {
     if (detail) parts.push(detail);
     if (light)  parts.push(light);
     if (fmt)    parts.push(fmt);
-    parts.push('masterpiece, award-winning');
-    result = parts.filter(Boolean).join(', ');
+    parts.push('masterpiece, award-winning, trending on ArtStation, best quality');
+    var positive = parts.filter(Boolean).join(', ');
+    result = positive + '\n\nNegative Prompt:\nblurry, low quality, pixelated, overexposed, underexposed, bad anatomy, watermark, text, logo, duplicate, ugly, deformed, noisy, out of focus';
 
   } else if (selectedType === 'text') {
     var tone     = textToneMap[getVal('tone')]       || '';
